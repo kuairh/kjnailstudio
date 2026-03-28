@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KJ Nail Studio | 专业美甲 · Perth</title>
+  <meta name="description" content="KJ Nail Studio - Perth专业美甲工作室，位于Claremont。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-kj">KJ</span>
+      <span class="logo-text">NAIL STUDIO</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home"     data-zh="首页"     data-en="Home">首页</a></li>
+      <li><a href="#services" data-zh="服务&价格" data-en="Services">服务&价格</a></li>
+      <li><a href="#gallery"  data-zh="作品相册"  data-en="Gallery">作品相册</a></li>
+      <li><a href="#contact"  data-zh="联系我们"  data-en="Contact">联系我们</a></li>
+      <li><a href="#booking"  data-zh="在线预约"  data-en="Booking">在线预约</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="lang-toggle" onclick="toggleLang()">EN</button>
+      <a href="#booking" class="nav-book-btn" data-zh="立即预约" data-en="Book Now">立即预约</a>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home"     onclick="toggleMenu()" data-zh="首页"     data-en="Home">首页</a>
+    <a href="#services" onclick="toggleMenu()" data-zh="服务&价格" data-en="Services">服务&价格</a>
+    <a href="#gallery"  onclick="toggleMenu()" data-zh="作品相册"  data-en="Gallery">作品相册</a>
+    <a href="#contact"  onclick="toggleMenu()" data-zh="联系我们"  data-en="Contact">联系我们</a>
+    <a href="#booking"  onclick="toggleMenu()" data-zh="在线预约"  data-en="Booking">在线预约</a>
+  </div>
+
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <div class="gold-orb orb1"></div>
+      <div class="gold-orb orb2"></div>
+      <div class="grid-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow" data-zh="珀斯高端美甲工作室 · Claremont" data-en="Perth Premium Nail Studio · Claremont">珀斯高端美甲工作室 · Claremont</p>
+      <h1 class="hero-title">
+        <span class="title-line">KJ</span>
+        <span class="title-line accent">NAIL</span>
+        <span class="title-line">STUDIO</span>
+      </h1>
+      <p class="hero-subtitle" data-zh="每一片指尖，都是一件艺术品" data-en="Every nail, a work of art">每一片指尖，都是一件艺术品</p>
+      <div class="hero-cta">
+        <a href="#booking"  class="btn-primary" data-zh="立即预约" data-en="Book Now">立即预约</a>
+        <a href="#services" class="btn-outline"  data-zh="查看服务" data-en="Our Services">查看服务</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span data-zh="向下滚动" data-en="Scroll">向下滚动</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <section class="about-strip">
+    <div class="strip-item">
+      <span class="strip-num">5+</span>
+      <span class="strip-label" data-zh="年专业经验" data-en="Years Experience">年专业经验</span>
+    </div>
+    <div class="strip-divider"></div>
+    <div class="strip-item">
+      <span class="strip-num">1000+</span>
+      <span class="strip-label" data-zh="满意客户" data-en="Happy Clients">满意客户</span>
+    </div>
+    <div class="strip-divider"></div>
+    <div class="strip-item">
+      <span class="strip-num">100%</span>
+      <span class="strip-label" data-zh="专业品牌产品" data-en="Pro Products">专业品牌产品</span>
+    </div>
+    <div class="strip-divider"></div>
+    <div class="strip-item">
+      <span class="strip-num">Perth</span>
+      <span class="strip-label" data-zh="Claremont 本地" data-en="Claremont, WA">Claremont 本地</span>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="section-header">
+      <p class="section-tag" data-zh="服务项目" data-en="Our Services">服务项目</p>
+      <h2 data-zh="专业美甲服务 & 价格" data-en="Services & Pricing">专业美甲服务 & 价格</h2>
+      <p class="section-sub" data-zh="所有服务均使用顶级品牌产品，确保持久效果" data-en="All services use premium brand products for lasting results">所有服务均使用顶级品牌产品，确保持久效果</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-card-header">
+          <span class="service-icon">💅</span>
+          <h3 data-zh="凝胶美甲" data-en="Gel Nails">凝胶美甲</h3>
+        </div>
+        <ul class="service-list">
+          <li><span data-zh="基础凝胶 (单色)" data-en="Basic Gel (Solid Color)">基础凝胶 (单色)</span><span class="price">$45</span></li>
+          <li><span data-zh="法式凝胶" data-en="French Gel">法式凝胶</span><span class="price">$55</span></li>
+          <li><span data-zh="猫眼凝胶" data-en="Cat Eye Gel">猫眼凝胶</span><span class="price">$60</span></li>
+          <li><span data-zh="渐变凝胶" data-en="Ombre Gel">渐变凝胶</span><span class="price">$65</span></li>
+        </ul>
+      </div>
+
+      <div class="service-card featured">
+        <div class="featured-badge" data-zh="最受欢迎" data-en="Most Popular">最受欢迎</div>
+        <div class="service-card-header">
+          <span class="service-icon">✨</span>
+          <h3 data-zh="艺术美甲" data-en="Nail Art">艺术美甲</h3>
+        </div>
+        <ul class="service-list">
+          <li><span data-zh="简单图案 (每指)" data-en="Simple Art (per nail)">简单图案 (每指)</span><span class="price">$5+</span></li>
+          <li><span data-zh="3D浮雕艺术" data-en="3D Nail Art">3D浮雕艺术</span><span class="price">$80+</span></li>
+          <li><span data-zh="手绘设计" data-en="Hand-painted Design">手绘设计</span><span class="price">$75+</span></li>
+          <li><span data-zh="全套定制设计" data-en="Full Custom Set">全套定制设计</span><span class="price">$90+</span></li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-header">
+          <span class="service-icon">💎</span>
+          <h3 data-zh="延长美甲" data-en="Nail Extensions">延长美甲</h3>
+        </div>
+        <ul class="service-list">
+          <li><span data-zh="水晶延长" data-en="Acrylic Extensions">水晶延长</span><span class="price">$75</span></li>
+          <li><span data-zh="凝胶延长" data-en="Gel Extensions">凝胶延长</span><span class="price">$80</span></li>
+          <li><span data-zh="甲片延长" data-en="Tip Extensions">甲片延长</span><span class="price">$70</span></li>
+          <li><span data-zh="补甲" data-en="Infill">补甲</span><span class="price">$50</span></li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-header">
+          <span class="service-icon">🌸</span>
+          <h3 data-zh="美甲护理" data-en="Nail Care">美甲护理</h3>
+        </div>
+        <ul class="service-list">
+          <li><span data-zh="基础修甲" data-en="Basic Manicure">基础修甲</span><span class="price">$30</span></li>
+          <li><span data-zh="豪华手部护理" data-en="Luxury Hand Care">豪华手部护理</span><span class="price">$55</span></li>
+          <li><span data-zh="卸甲" data-en="Gel Removal">卸甲</span><span class="price">$20</span></li>
+          <li><span data-zh="足部美甲" data-en="Pedicure">足部美甲</span><span class="price">$50+</span></li>
+        </ul>
+      </div>
+
+    </div>
+    <p class="services-note" data-zh="* 以上价格仅供参考，最终报价请咨询预约。所有价格含GST。" data-en="* Prices are indicative. Final quote upon consultation. All prices include GST.">* 以上价格仅供参考，最终报价请咨询预约。所有价格含GST。</p>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <div class="section-header">
+      <p class="section-tag" data-zh="作品展示" data-en="Our Work">作品展示</p>
+      <h2 data-zh="精选作品相册" data-en="Portfolio Gallery">精选作品相册</h2>
+      <p class="section-sub" data-zh="每一个作品都凝聚着我们对美的热情与专注" data-en="Every piece reflects our passion and dedication to beauty">每一个作品都凝聚着我们对美的热情与专注</p>
+    </div>
+    <div class="gallery-filters">
+      <button class="filter-btn active" data-filter="all"       data-zh="全部" data-en="All">全部</button>
+      <button class="filter-btn"        data-filter="gel"       data-zh="凝胶" data-en="Gel">凝胶</button>
+      <button class="filter-btn"        data-filter="art"       data-zh="艺术" data-en="Art">艺术</button>
+      <button class="filter-btn"        data-filter="extension" data-zh="延长" data-en="Extension">延长</button>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item"       data-category="gel">      <div class="gallery-placeholder"><span>📸</span><p data-zh="上传作品图片" data-en="Upload photo">上传作品图片</p></div><div class="gallery-overlay"><span data-zh="凝胶美甲" data-en="Gel Nails">凝胶美甲</span></div></div>
+      <div class="gallery-item large" data-category="art">      <div class="gallery-placeholder"><span>📸</span><p data-zh="上传作品图片" data-en="Upload photo">上传作品图片</p></div><div class="gallery-overlay"><span data-zh="艺术美甲" data-en="Nail Art">艺术美甲</span></div></div>
+      <div class="gallery-item"       data-category="extension"><div class="gallery-placeholder"><span>📸</span><p data-zh="上传作品图片" data-en="Upload photo">上传作品图片</p></div><div class="gallery-overlay"><span data-zh="延长美甲" data-en="Extensions">延长美甲</span></div></div>
+      <div class="gallery-item"       data-category="gel">      <div class="gallery-placeholder"><span>📸</span><p data-zh="上传作品图片" data-en="Upload photo">上传作品图片</p></div><div class="gallery-overlay"><span data-zh="渐变凝胶" data-en="Ombre Gel">渐变凝胶</span></div></div>
+      <div class="gallery-item tall"  data-category="art">      <div class="gallery-placeholder"><span>📸</span><p data-zh="上传作品图片" data-en="Upload photo">上传作品图片</p></div><div class="gallery-overlay"><span data-zh="手绘设计" data-en="Hand-painted">手绘设计</span></div></div>
+      <div class="gallery-item"       data-category="extension"><div class="gallery-placeholder"><span>📸</span><p data-zh="上传作品图片" data-en="Upload photo">上传作品图片</p></div><div class="gallery-overlay"><span data-zh="水晶延长" data-en="Acrylic">水晶延长</span></div></div>
+    </div>
+    <div class="gallery-note">
+      <p data-zh="💡 将你的作品照片放入 static/images/ 文件夹即可替换占位图" data-en="💡 Add your photos to static/images/ folder to replace placeholders">💡 将你的作品照片放入 static/images/ 文件夹即可替换占位图</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="section-header">
+      <p class="section-tag" data-zh="联系我们" data-en="Contact Us">联系我们</p>
+      <h2 data-zh="随时与我们联系" data-en="Get in Touch">随时与我们联系</h2>
+    </div>
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <div class="contact-card-icon">📍</div>
+        <h3 data-zh="地址" data-en="Address">地址</h3>
+        <p>229 Stirling Highway, Claremont, WA 6010</p>
+        <a href="https://maps.google.com/?q=229+Stirling+Highway+Claremont+WA" target="_blank" class="contact-link" data-zh="查看地图 →" data-en="View on Map →">查看地图 →</a>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-card-icon">🕐</div>
+        <h3 data-zh="营业时间" data-en="Opening Hours">营业时间</h3>
+        <p data-zh="周一至周日 10:00 - 19:00" data-en="Mon - Sun: 10:00 AM - 7:00 PM">周一至周日 10:00 - 19:00</p>
+        <p class="contact-sub" data-zh="节假日营业，建议提前预约" data-en="Open on public holidays, booking recommended">节假日营业，建议提前预约</p>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-card-icon">📞</div>
+        <h3 data-zh="电话" data-en="Phone">电话</h3>
+        <a href="tel:+614XXXXXXXX" class="contact-number">+61 4XX XXX XXX</a>
+        <p class="contact-sub" data-zh="可接听中文" data-en="Chinese & English spoken">可接听中文</p>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-card-icon">💬</div>
+        <h3>WhatsApp</h3>
+        <a href="https://wa.me/614XXXXXXXX" target="_blank" class="contact-number">+61 4XX XXX XXX</a>
+        <p class="contact-sub" data-zh="发送消息预约" data-en="Message us to book">发送消息预约</p>
+        <a href="https://wa.me/614XXXXXXXX" target="_blank" class="btn-contact-sm">
+          <span data-zh="发送WhatsApp" data-en="Open WhatsApp">发送WhatsApp</span>
+        </a>
+      </div>
+
+      <div class="contact-card wechat-card">
+        <div class="contact-card-icon">🟢</div>
+        <h3 data-zh="微信 WeChat" data-en="WeChat">微信 WeChat</h3>
+        <p class="contact-sub">微信号：<strong>你的微信ID</strong></p>
+        <div class="qr-wrapper">
+          <img src="{{ url_for('static', filename='images/wechat-qr.png') }}"
+               alt="WeChat QR Code" class="qr-img"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="qr-placeholder">
+            <span>🟩</span>
+            <p>请将微信二维码<br>命名为 wechat-qr.png<br>放入 static/images/</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-card-icon">✉️</div>
+        <h3 data-zh="电子邮件" data-en="Email">电子邮件</h3>
+        <a href="mailto:info@kjnailstudio.com.au" class="contact-number" style="font-size:0.85rem;">info@kjnailstudio.com.au</a>
+        <p class="contact-sub" data-zh="24小时内回复" data-en="Reply within 24 hours">24小时内回复</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="booking" class="booking">
+    <div class="booking-bg"><div class="gold-orb orb3"></div></div>
+    <div class="booking-container">
+      <div class="booking-info">
+        <p class="section-tag" data-zh="在线预约" data-en="Online Booking">在线预约</p>
+        <h2 data-zh="预约你的专属时间" data-en="Book Your Appointment">预约你的专属时间</h2>
+        <p data-zh="填写预约表单，我们将在24小时内通过微信或电话与您确认。" data-en="Fill in the form and we'll confirm via WeChat or phone within 24 hours.">填写预约表单，我们将在24小时内通过微信或电话与您确认。</p>
+        <div class="booking-contact-quick">
+          <a href="tel:+614XXXXXXXX" class="quick-contact-btn">
+            <span class="qc-icon">📞</span>
+            <span data-zh="直接致电" data-en="Call Now">直接致电</span>
+          </a>
+          <a href="https://wa.me/614XXXXXXXX" target="_blank" class="quick-contact-btn">
+            <span class="qc-icon">💬</span>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+      </div>
+      <div class="booking-form-wrap">
+        <form class="booking-form" id="bookingForm" onsubmit="submitBooking(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label data-zh="姓名 *" data-en="Name *">姓名 *</label>
+              <input type="text" name="name" required placeholder="您的姓名 / Your name">
+            </div>
+            <div class="form-group">
+              <label data-zh="联系电话 *" data-en="Phone *">联系电话 *</label>
+              <input type="tel" name="phone" required placeholder="04XX XXX XXX">
+            </div>
+          </div>
+          <div class="form-group">
+            <label data-zh="电子邮件" data-en="Email">电子邮件</label>
+            <input type="email" name="email" placeholder="your@email.com">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label data-zh="服务项目 *" data-en="Service *">服务项目 *</label>
+              <select name="service" required>
+                <option value="">请选择服务 / Select service</option>
+                <option value="gel">凝胶美甲 / Gel Nails</option>
+                <option value="art">艺术美甲 / Nail Art</option>
+                <option value="ext">延长美甲 / Nail Extensions</option>
+                <option value="care">美甲护理 / Nail Care</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label data-zh="期望日期 *" data-en="Preferred Date *">期望日期 *</label>
+              <input type="date" name="date" id="dateInput" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label data-zh="期望时间" data-en="Preferred Time">期望时间</label>
+            <select name="time">
+              <option>10:00</option><option>11:00</option><option>12:00</option>
+              <option>13:00</option><option>14:00</option><option>15:00</option>
+              <option>16:00</option><option>17:00</option><option>18:00</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label data-zh="备注 / 设计参考" data-en="Notes / Design Reference">备注 / 设计参考</label>
+            <textarea name="notes" rows="3" placeholder="如有特殊要求请在此说明 / Any special requests"></textarea>
+          </div>
+          <button type="submit" class="btn-primary full-width" data-zh="提交预约" data-en="Submit Booking">提交预约</button>
+          <p class="form-note" data-zh="* 提交后我们将通过电话或微信与您确认时间" data-en="* We'll confirm via phone or WeChat within 24 hours">* 提交后我们将通过电话或微信与您确认时间</p>
+        </form>
+        <div class="booking-success" id="bookingSuccess" style="display:none">
+          <div class="success-icon">✓</div>
+          <h3 data-zh="预约提交成功！" data-en="Booking Submitted!">预约提交成功！</h3>
+          <p data-zh="感谢您的预约，我们将在24小时内联系您确认时间。" data-en="Thank you! We'll contact you within 24 hours to confirm.">感谢您的预约，我们将在24小时内联系您确认时间。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="logo-kj">KJ</span>
+          <span class="logo-text">NAIL STUDIO</span>
+        </div>
+        <p data-zh="珀斯高端美甲工作室" data-en="Perth Premium Nail Studio">珀斯高端美甲工作室</p>
+        <p class="footer-address">229 Stirling Highway, Claremont, WA 6010</p>
+      </div>
+      <div class="footer-links">
+        <a href="#home"     data-zh="首页"     data-en="Home">首页</a>
+        <a href="#services" data-zh="服务&价格" data-en="Services">服务&价格</a>
+        <a href="#gallery"  data-zh="作品相册"  data-en="Gallery">作品相册</a>
+        <a href="#contact"  data-zh="联系我们"  data-en="Contact">联系我们</a>
+        <a href="#booking"  data-zh="在线预约"  data-en="Booking">在线预约</a>
+      </div>
+      <div class="footer-contact">
+        <a href="tel:+614XXXXXXXX">+61 4XX XXX XXX</a>
+        <a href="mailto:info@kjnailstudio.com.au">info@kjnailstudio.com.au</a>
+        <a href="https://wa.me/614XXXXXXXX" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 KJ Nail Studio · Claremont, Perth WA</p>
+      <p>kjnailstudio.com.au</p>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
