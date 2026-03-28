@@ -9,8 +9,69 @@ KJ Nail Studio - Flask Web Application
 
 from flask import Flask, render_template, request, jsonify
 from datetime import datetime
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 app = Flask(__name__)
+
+# ============================================================
+# 邮件配置 / Email Configuration
+# ============================================================
+EMAIL_CONFIG = {
+    # 发件邮箱（用于发送通知的邮箱，建议用 Gmail 或其他 SMTP 邮箱）
+    "sender_email":    "your-sender@gmail.com",       # TODO: 填入发件邮箱
+    # 发件邮箱的授权密码（Gmail 请使用"应用专用密码"，非登录密码）
+    "sender_password": "your-app-password",            # TODO: 填入授权密码
+    # 收件邮箱（预约通知发到这里）
+    "receiver_email":  "",                             # TODO: 填入接收通知的邮箱
+    # SMTP 服务器设置（Gmail 默认，如用其他邮箱请修改）
+    "smtp_host": "smtp.gmail.com",
+    "smtp_port": 587,
+}
+
+
+def send_booking_email(data: dict) -> bool:
+    """发送预约通知邮件，成功返回 True，失败返回 False"""
+    receiver = EMAIL_CONFIG["receiver_email"]
+    if not receiver:
+        print("[邮件] 收件邮箱未配置，跳过发送")
+        return False
+
+    subject = f"[KJ Nail Studio] 新预约 - {data.get('name', '未知姓名')}"
+
+    body_lines = ["您有一条新的预约请求：\n"]
+    field_labels = {
+        "name":    "姓名",
+        "phone":   "电话",
+        "email":   "邮箱",
+        "service": "服务项目",
+        "date":    "预约日期",
+        "time":    "预约时间",
+        "notes":   "备注",
+    }
+    for key, label in field_labels.items():
+        if key in data:
+            body_lines.append(f"{label}: {data[key]}")
+
+    body_lines.append(f"\n提交时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+
+    msg = MIMEMultipart()
+    msg["From"]    = EMAIL_CONFIG["sender_email"]
+    msg["To"]      = receiver
+    msg["Subject"] = subject
+    msg.attach(MIMEText("\n".join(body_lines), "plain", "utf-8"))
+
+    try:
+        with smtplib.SMTP(EMAIL_CONFIG["smtp_host"], EMAIL_CONFIG["smtp_port"]) as server:
+            server.starttls()
+            server.login(EMAIL_CONFIG["sender_email"], EMAIL_CONFIG["sender_password"])
+            server.sendmail(EMAIL_CONFIG["sender_email"], receiver, msg.as_string())
+        print(f"[邮件] 预约通知已发送至 {receiver}")
+        return True
+    except Exception as e:
+        print(f"[邮件] 发送失败: {e}")
+        return False
 
 SITE_CONFIG = {
     "studio_name": "KJ Nail Studio",
@@ -97,6 +158,7 @@ def submit_booking():
     print("=== 新预约 / New Booking ===")
     for key, val in data.items():
         print(f"  {key}: {val}")
+    send_booking_email(data)
     return jsonify({"success": True, "message": "预约已提交"})
 
 if __name__ == "__main__":
